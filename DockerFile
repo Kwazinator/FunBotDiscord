@@ -7,3 +7,4 @@
  COPY . .
 
  CMD [ "python3", "discord_bot.py" ]
+
