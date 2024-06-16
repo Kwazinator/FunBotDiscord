@@ -33,5 +33,8 @@ async def on_message(message):
     if message.content == 'testing again 3':
         await message.channel.send('PASSED YAHOO 3')
 
+    if message.content == 'testing again 4':
+        await message.channel.send('PASSED YAHOO 4')
+
 
 client.run(TOKEN)
