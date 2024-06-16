@@ -1,11 +1,8 @@
 import discord
-
-
+intents = discord.Intents.all()
 f = open("botToken.txt", "r")
-print(f.read())
 TOKEN = f.read()
-
-client = discord.Client()
+client = discord.Client(intents=intents)
 
 
 @client.event
@@ -15,18 +12,15 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    print('i can see this')
+    print(message.content)
     if message.author == client.user:
         return
 
-    if message.content.lower() == 'hello':
+    if message.content == 'hello':
         await message.channel.send(f'Hello, {message.author.display_name}!')
-        return
 
-    if message.content.lower() == 'bye':
-        await message.channel.send(f'See you later, {message.author.display_name}!')
-        return
-
-    if message.content.lower() == 'hey jared':
+    if message.content == 'hey jared':
         await message.channel.send('that guy sucks dont talk to him!')
 
 
