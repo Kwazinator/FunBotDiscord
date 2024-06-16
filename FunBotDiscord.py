@@ -23,18 +23,4 @@ async def on_message(message):
     if message.content == 'hey jared':
         await message.channel.send('that guy sucks dont talk to him!')
 
-
-    if message.content == 'testing this new feature':
-        await message.channel.send('PASSED YAHOO')
-
-    if message.content == 'testing again':
-        await message.channel.send('PASSED YAHOO 2')
-
-    if message.content == 'testing again 3':
-        await message.channel.send('PASSED YAHOO 3')
-
-    if message.content == 'testing again 4':
-        await message.channel.send('PASSED YAHOO 4')
-
-
 client.run(TOKEN)
