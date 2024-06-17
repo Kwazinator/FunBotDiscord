@@ -17,10 +17,11 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content == 'hello':
+    if message.content.lower() == 'hello':
         await message.channel.send(f'Hello, {message.author.display_name}!')
 
     if message.content == 'hey jared':
         await message.channel.send('that guy sucks dont talk to him!')
+
 
 client.run(TOKEN)
