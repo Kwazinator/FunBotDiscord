@@ -12,6 +12,11 @@
 - **Example**: `/reminder 2 days 1 hour "Hello World"`
   - **Note**: The time can be specified in days, hours, or minutes. message must be wrapped in quotes
 
+### /google
+- **Description**: Google a query and link the result
+- **Usage**: `/google <query>`
+- **Example**: `/google Richard Nixon`
+
 ## Bot Behavior
 - Responds to `hello` with a greeting mentioning the user.
 - Responds to `hey jared` with a playful message.
