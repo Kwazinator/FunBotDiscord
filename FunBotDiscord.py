@@ -1,5 +1,6 @@
 import discord
 from urllib.parse import quote_plus
+from hell_let_loose import HLL_View
 from discord.ext import commands, tasks
 import asyncio
 import sqlite3
@@ -55,6 +56,13 @@ async def hello(ctx: commands.Context):
 async def google(ctx: commands.Context, *, query: str):
     """Returns a google link for a query"""
     await ctx.send(f'Google Result for: `{query}`', view=Google(query))
+
+@bot.hybrid_command(name="hll")
+async def survey(ctx):
+    view = HLL_View()
+    await ctx.send(view=view)
+    await view.wait()
+    await ctx.send(view.answer1)
 
 @bot.command(name="reminder")
 async def reminder(ctx, *, time_and_message: str):
