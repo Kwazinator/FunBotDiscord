@@ -37,20 +37,27 @@ async def on_ready():
 async def hello(ctx: commands.Context):
     await ctx.send('pong')
 
-@bot.hybrid_command(name="reminder", description="Set a reminder")
-@discord.app_commands.describe(time="Time for the reminder in the format '1 day', '2 hours', etc.", message="The message for the reminder")
-async def reminder(ctx: commands.Context, time: str, message: str):
+@bot.command(name="reminder")
+async def reminder(ctx, *, time_and_message: str):
     try:
-        due_date = calculate_due_date(time)
+        message_pattern = r'"([^"]+)"'  # Extract message within quotes
+        message_match = re.search(message_pattern, time_and_message)
+        if not message_match:
+            await ctx.send('Invalid format. Use `!reminder <time> "<message>"` with time units being day(s), hour(s), or minute(s).')
+            return
+
+        message = message_match.group(1)
+        time_str = time_and_message.replace(f'"{message}"', '').strip()
+        due_date = calculate_due_date(time_str)
 
         if due_date is None:
-            await ctx.send(f'Error: No time associated with reminder, use day(s), hour(s), or minute(s), followed by a number. Example: /reminder time:1 day message:Hello World')
+            await ctx.send('Invalid time format. Use units like day(s), hour(s), or minute(s).')
             return
 
         c.execute("INSERT INTO reminders (message, due_date, channel_id) VALUES (?, ?, ?)",
                   (message, due_date, ctx.channel.id))
         conn.commit()
-        await ctx.send(f'Scheduled a reminder: "{message}" for {due_date}.')
+        await ctx.send(f'Scheduled a reminder: "{message}" at {due_date}.')
     except Exception as e:
         await ctx.send(f'Error: {str(e)}')
 
