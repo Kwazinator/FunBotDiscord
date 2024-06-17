@@ -16,9 +16,11 @@ async def on_ready():
     except Exception as e:
         print(e)
 
-@bot.hybrid_command(name="hello")
+@bot.hybrid_command(name="ping")
 async def hello(ctx: commands.Context):
     await ctx.send('pong') 
+
+bot.run(TOKEN)
 
 @client.event
 async def on_ready():
