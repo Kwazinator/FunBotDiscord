@@ -1,7 +1,5 @@
 import discord
 
-import pandas
-
 intents = discord.Intents.all()
 f = open("botToken.txt", "r")
 TOKEN = f.read()
