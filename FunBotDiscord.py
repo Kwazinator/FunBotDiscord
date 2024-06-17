@@ -1,4 +1,5 @@
 import discord
+from urllib.parse import quote_plus
 from discord.ext import commands, tasks
 import asyncio
 import sqlite3
@@ -23,6 +24,18 @@ def setup_database():
 
 conn, c = setup_database()
 
+class Google(discord.ui.View):
+    def __init__(self, query: str):
+        super().__init__()
+        # we need to quote the query string to make a valid url. Discord will raise an error if it isn't valid.
+        query = quote_plus(query)
+        url = f'https://www.google.com/search?q={query}'
+
+        # Link buttons cannot be made with the decorator
+        # Therefore we have to manually create one.
+        # We add the quoted url to the button, and add the button to the view.
+        self.add_item(discord.ui.Button(label='Click Here', url=url))
+
 @bot.event
 async def on_ready():
     print("Ready to go")
@@ -35,7 +48,12 @@ async def on_ready():
 
 @bot.hybrid_command(name="ping")
 async def hello(ctx: commands.Context):
-    await ctx.send('pong')
+    await ctx.send('pong') 
+    
+@bot.command()
+async def google(ctx: commands.Context, *, query: str):
+    """Returns a google link for a query"""
+    await ctx.send(f'Google Result for: `{query}`', view=Google(query))
 
 @bot.command(name="reminder")
 async def reminder(ctx, *, time_and_message: str):
