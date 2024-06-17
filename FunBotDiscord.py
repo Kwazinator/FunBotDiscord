@@ -38,56 +38,6 @@ async def hello(ctx: commands.Context):
     await ctx.send('pong')
 
 @bot.hybrid_command(name="reminder", description="Set a reminder")
-@app_commands.describe(time="Time for the reminder in the format '1 day', '2 hours', etc.", message="The message for the reminder")
-async def reminder(interaction: discord.Interaction, time: str, message: str):
-
-With the updated usage of bot.hybrid_command and the explicit definition of parameters, the message does not need to be in quotes anymore. The parameters time and message are now clearly separated and handled by Discord's command system.
-
-Here's the updated command definition and usage:
-
-Updated Command Definition
-python
-Copy code
-import discord
-from discord.ext import commands, tasks
-import asyncio
-import sqlite3
-from datetime import datetime, timedelta
-import re
-
-intents = discord.Intents.all()
-f = open("botToken.txt", "r")
-TOKEN = f.read()
-bot = commands.Bot(command_prefix="/", intents=intents)
-
-def setup_database():
-    # Connect to SQLite database
-    conn = sqlite3.connect('reminders.db')
-    c = conn.cursor()
-
-    # Create table if it does not exist
-    c.execute('''CREATE TABLE IF NOT EXISTS reminders
-                 (id INTEGER PRIMARY KEY, message TEXT, due_date DATETIME, channel_id INTEGER)''')
-    conn.commit()
-    return conn, c
-
-conn, c = setup_database()
-
-@bot.event
-async def on_ready():
-    print("Ready to go")
-    try:
-        synced = await bot.tree.sync()
-        print(f"Synced {len(synced)} command(s)")
-    except Exception as e:
-        print(e)
-    check_due_reminders.start()  # Start the reminders background task
-
-@bot.hybrid_command(name="ping")
-async def hello(ctx: commands.Context):
-    await ctx.send('pong')
-
-@bot.hybrid_command(name="reminder", description="Set a reminder")
 @discord.app_commands.describe(time="Time for the reminder in the format '1 day', '2 hours', etc.", message="The message for the reminder")
 async def reminder(ctx: commands.Context, time: str, message: str):
     try:
