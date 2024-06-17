@@ -2,3 +2,4 @@
 botToken.txt
 .idea
 DockerBuildPipeline.py
+__pycache__
