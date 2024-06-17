@@ -1,10 +1,24 @@
 import discord
-
+from discord.ext import commands
 intents = discord.Intents.all()
 f = open("botToken.txt", "r")
 TOKEN = f.read()
 client = discord.Client(intents=intents)
 
+bot = commands.Bot(command_prefix="/", intents = discord.Intents.all())
+
+@bot.event
+async def on_ready():
+    print("Ready to go")
+    try:
+        synced = await bot.tree.sync()
+        print(f"Synced {len(synced)} command(s)")
+    except Exception as e:
+        print(e)
+
+@bot.hybrid_command(name="hello")
+async def hello(ctx: commands.Context):
+    await ctx.send('pong') 
 
 @client.event
 async def on_ready():
