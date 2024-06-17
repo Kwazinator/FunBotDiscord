@@ -37,7 +37,7 @@ async def on_ready():
 async def hello(ctx: commands.Context):
     await ctx.send('pong')
 
-@bot.tree.command(name="reminder", description="Set a reminder")
+@bot.hybrid_command(name="reminder", description="Set a reminder")
 @app_commands.describe(time="Time for the reminder in the format '1 day', '2 hours', etc.", message="The message for the reminder")
 async def reminder(interaction: discord.Interaction, time: str, message: str):
 
