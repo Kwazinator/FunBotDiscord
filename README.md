@@ -8,9 +8,9 @@
 
 ### /reminder
 - **Description**: Sets a reminder for a specified time.
-- **Usage**: `/reminder <time> "<message>"`
-- **Example**: `/reminder 2 days "Hello World"`
-  - **Note**: The time can be specified in days, hours, or minutes. The message must be in quotations.
+- **Usage**: `/reminder <time> <message>`
+- **Example**: `/reminder 2 days 1 hour Hello World
+  - **Note**: The time can be specified in days, hours, or minutes.
 
 ## Bot Behavior
 - Responds to `hello` with a greeting mentioning the user.
