@@ -70,32 +70,6 @@ async def on_ready():
 async def on_ready():
     print(f'Logged in as {bot.user}')
 
-@bot.event
-async def on_message(message):
-    # Ignore bot messages
-    if message.author.bot:
-        return
-
-    # Check if the message contains attachments
-    if message.attachments:
-        for attachment in message.attachments:
-            # Check if the attachment is a valid clip (based on file extension)
-            if any(attachment.filename.endswith(ext) for ext in VALID_CLIP_EXTENSIONS):
-                # Get the clip forwarding channel
-                clip_channel = bot.get_channel(CLIP_CHANNEL_ID)
-                if clip_channel:
-                    # Forward the message and attachment to the designated channel
-                    embed = discord.Embed(
-                        description=f"**{message.author.name}** shared a clip:",
-                        color=discord.Color.blue()
-                    )
-                    # Attach the clip URL in the embed
-                    embed.add_field(name="Clip", value=attachment.url, inline=False)
-                    await clip_channel.send(embed=embed)
-
-    # Don't forget to process commands if the bot has any
-    await bot.process_commands(message)
-
 @bot.hybrid_command(name="ping")
 async def hello(ctx: commands.Context):
     """Pings the Bot"""
@@ -184,7 +158,26 @@ async def on_message(message):
     if '??' in message.content:
         await message.add_reaction('\N{THUMBS UP SIGN}')
         await message.add_reaction('\N{THUMBS DOWN SIGN}')
+        
 
-    await bot.process_commands(message)
+    # Check if the message contains attachments
+    if message.attachments:
+        for attachment in message.attachments:
+            # Check if the attachment is a valid clip (based on file extension)
+            if any(attachment.filename.endswith(ext) for ext in VALID_CLIP_EXTENSIONS):
+                # Get the clip forwarding channel
+                clip_channel = bot.get_channel(CLIP_CHANNEL_ID)
+                if clip_channel:
+                    # Forward the message and attachment to the designated channel
+                    embed = discord.Embed(
+                        description=f"**{message.author.name}** shared a clip:",
+                        color=discord.Color.blue()
+                    )
+                    # Attach the clip URL in the embed
+                    embed.add_field(name="Clip", value=attachment.url, inline=False)
+                    await clip_channel.send(embed=embed)
+
+    # Don't forget to process commands if the bot has any
+    await bot.process_commands(message)    
 
 bot.run(TOKEN)
