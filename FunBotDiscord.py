@@ -168,8 +168,21 @@ async def on_message(message):
                 # Get the clip forwarding channel
                 clip_channel = bot.get_channel(CLIP_CHANNEL_ID)
                 if clip_channel:
-                    await message.channel.send('test - clip channel confirmed')
-                    await message.forward(clip_channel)
+            # Forward the message content to the clip_channel
+                    embed = discord.Embed(
+                    description=f"**{message.author.name}** shared a clip:\n{message.content}",
+                    color=discord.Color.blue())
+                    
+            # Send the content and any attachments to the target channel
+            if message.attachments:
+                for attachment in message.attachments:
+                    await clip_channel.send(
+                        embed=embed, 
+                        content=message.content, 
+                        file=discord.File(attachment.url, filename=attachment.filename)
+                    )
+            else:
+                await clip_channel.send(embed=embed, content=message.content)
 
     # Don't forget to process commands if the bot has any
     await bot.process_commands(message)    
