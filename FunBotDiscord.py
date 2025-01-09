@@ -158,10 +158,11 @@ async def on_message(message):
     if '??' in message.content:
         await message.add_reaction('\N{THUMBS UP SIGN}')
         await message.add_reaction('\N{THUMBS DOWN SIGN}')
-        
+
 
     # Check if the message contains attachments
     if message.attachments:
+        await message.channel.send('test - confirmed attatchment')
         for attachment in message.attachments:
             # Check if the attachment is a valid clip (based on file extension)
             if any(attachment.filename.endswith(ext) for ext in VALID_CLIP_EXTENSIONS):
