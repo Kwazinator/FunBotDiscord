@@ -170,7 +170,7 @@ async def on_message(message):
                 if clip_channel:
             # Forward the message content and original author info
                     embed = discord.Embed(
-                    description=f"**{message.author.name}** shared a clip:\n{message.content}",
+                    description=f"**{message.author.name}** shared a clip!\n{message.content}",
                     color=discord.Color.blue()
                     )
             await clip_channel.send(embed=embed, file=await attachment.to_file())
