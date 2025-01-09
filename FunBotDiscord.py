@@ -168,6 +168,7 @@ async def on_message(message):
                 # Get the clip forwarding channel
                 clip_channel = bot.get_channel(CLIP_CHANNEL_ID)
                 if clip_channel:
+                    await message.channel.send('test - clip channel confirmed')
                     await message.forward(clip_channel)
 
     # Don't forget to process commands if the bot has any
