@@ -155,11 +155,6 @@ async def on_message(message):
     if message.content.lower() == 'hey jared':
         await message.channel.send('that guy sucks dont talk to him!')
 
-    if '??' in message.content:
-        await message.add_reaction('\N{THUMBS UP SIGN}')
-        await message.add_reaction('\N{THUMBS DOWN SIGN}')
-
-
     # Check if the message contains attachments
     if message.attachments:
         for attachment in message.attachments:
