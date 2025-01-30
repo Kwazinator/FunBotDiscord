@@ -1,15 +1,17 @@
 import discord
-#import RiotConts as Conts
-#import requests
-#import PIL
-#import pandas
 from urllib.parse import quote_plus
+
+import LeagueOfLegends
 from hell_let_loose import HLL_View
 from discord.ext import commands, tasks
 import asyncio
 import sqlite3
 from datetime import datetime, timedelta
 import re
+import cv2
+import numpy as np
+import os
+import aiohttp
 
 intents = discord.Intents.all()
 f = open("botToken.txt", "r")
@@ -18,6 +20,10 @@ bot = commands.Bot(command_prefix="/", intents=intents)
 # List of valid video file extensions for Discord clips
 VALID_CLIP_EXTENSIONS = ['.mp4', '.webm', '.mov']
 CLIP_CHANNEL_ID = 1326956425762570240
+AUTHORIZED_USER_ID = 1251245488825565299
+#AUTHORIZED_USER_ID = 262347377476632577
+MY_USER_ID = 262347377476632577
+
 
 def setup_database():
     # Connect to SQLite database
@@ -170,9 +176,34 @@ async def on_message(message):
                     description=f"**{message.author.name}** shared a clip!\n{message.content}",
                     color=discord.Color.blue()
                     )
-            await clip_channel.send(embed=embed, file=await attachment.to_file())
+                await clip_channel.send(embed=embed, file=await attachment.to_file())
+
+    if message.attachments and message.author.id == AUTHORIZED_USER_ID:
+        for attachment in message.attachments:
+            # Check if the attachment is a valid clip (based on file extension)
+            if any(attachment.filename.lower().endswith(ext) for ext in
+                   ['png']):  # Validate image format
+                image = await download_image(attachment.url)
+                if image is not None:
+                    print('image at ' + attachment.url)
+                    answer = LeagueOfLegends.find_best_match(image, "C:\\Users\\kwasi\\OneDrive\\Documents\\GitHub\\FunBotDiscord\\AllLeagueChampions")
+                    user = await bot.fetch_user(MY_USER_ID)  # Replace with your Discord ID
+                    await user.send(answer)
+                    user = await bot.fetch_user(368913296771776512)  # Replace with your Discord ID
+                    await user.send(answer)
+                else:
+                    await message.channel.send("Failed to process the image.")
+    await bot.process_commands(message)
+
+async def download_image(url):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as resp:
+            if resp.status == 200:
+                image_bytes = await resp.read()
+                image_array = np.asarray(bytearray(image_bytes), dtype=np.uint8)
+                return cv2.imdecode(image_array, cv2.IMREAD_COLOR)  # Decode image for OpenCV
+    return None
              
     # Don't forget to process commands if the bot has any
-    await bot.process_commands(message)    
 
 bot.run(TOKEN)
