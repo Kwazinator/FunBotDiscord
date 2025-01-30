@@ -2,6 +2,7 @@ import discord
 #import RiotConts as Conts
 #import requests
 #import PIL
+#import pandas
 from urllib.parse import quote_plus
 from hell_let_loose import HLL_View
 from discord.ext import commands, tasks
