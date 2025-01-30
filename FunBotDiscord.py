@@ -20,8 +20,8 @@ bot = commands.Bot(command_prefix="/", intents=intents)
 # List of valid video file extensions for Discord clips
 VALID_CLIP_EXTENSIONS = ['.mp4', '.webm', '.mov']
 CLIP_CHANNEL_ID = 1326956425762570240
-#AUTHORIZED_USER_ID = 1251245488825565299
-AUTHORIZED_USER_ID = 262347377476632577
+AUTHORIZED_USER_ID = 1251245488825565299
+#AUTHORIZED_USER_ID = 262347377476632577
 MY_USER_ID = 262347377476632577
 #MY_USER_ID = 262347377476632577
 
@@ -190,8 +190,8 @@ async def on_message(message):
                     answer = LeagueOfLegends.find_best_match(image, "AllLeagueChampions")
                     user = await bot.fetch_user(MY_USER_ID)  # Replace with your Discord ID
                     await user.send(answer)
-                    #user = await bot.fetch_user(368913296771776512)  # Replace with your Discord ID
-                    #await user.send(answer)
+                    user = await bot.fetch_user(368913296771776512)  # Replace with your Discord ID
+                    await user.send(answer)
                 else:
                     await message.channel.send("Failed to process the image.")
     await bot.process_commands(message)
