@@ -189,6 +189,7 @@ async def on_message(message):
                 if image is not None:
                     print('image at ' + attachment.url)
                     answer = LeagueOfLegends.find_best_match(image, "AllLeagueChampions")
+                    answer = answer.replace('_', ' ')
                     user = await bot.fetch_user(MY_USER_ID)  # Replace with your Discord ID
                     await user.send(answer)
                     user = await bot.fetch_user(368913296771776512)  # Replace with your Discord ID
