@@ -20,7 +20,7 @@ bot = commands.Bot(command_prefix="/", intents=intents)
 # List of valid video file extensions for Discord clips
 VALID_CLIP_EXTENSIONS = ['.mp4', '.webm', '.mov']
 CLIP_CHANNEL_ID = 1326956425762570240
-AUTHORIZED_USER_ID = 1251245488825565299
+#AUTHORIZED_USER_ID = 1251245488825565299
 #AUTHORIZED_USER_ID = 262347377476632577
 MY_USER_ID = 262347377476632577
 #MY_USER_ID = 262347377476632577
@@ -180,7 +180,7 @@ async def on_message(message):
                     )
                 await clip_channel.send(embed=embed, file=await attachment.to_file())
 
-    if message.attachments and message.author.id == AUTHORIZED_USER_ID:
+    if message.attachments and message.author.id in [368913296771776512, MY_USER_ID, 999736048596816014]:
         for attachment in message.attachments:
             # Check if the attachment is a valid clip (based on file extension)
             if any(attachment.filename.lower().endswith(ext) for ext in
