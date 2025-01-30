@@ -46,4 +46,4 @@ def find_best_match(input_image_array, image_library_path):
 
     return best_match_name
 
-image_library = "C:\\Users\\kwasi\\OneDrive\\Documents\\GitHub\\FunBotDiscord\\AllLeagueChampions"
+image_library = "AllLeagueChampions"
