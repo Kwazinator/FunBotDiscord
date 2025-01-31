@@ -17,14 +17,10 @@ intents = discord.Intents.all()
 f = open("botToken.txt", "r")
 TOKEN = f.read()
 bot = commands.Bot(command_prefix="/", intents=intents)
-# List of valid video file extensions for Discord clips
 VALID_CLIP_EXTENSIONS = ['.mp4', '.webm', '.mov']
 CLIP_CHANNEL_ID = 1326956425762570240
 AUTHORIZED_USER_ID = 999736048596816014
-##AUTHORIZED_USER_ID = 262347377476632577
 MY_USER_ID = 262347377476632577
-#MY_USER_ID = 262347377476632577
-#MY_USER_ID = 262347377476632577
 
 
 def setup_database():
@@ -52,20 +48,6 @@ class Google(discord.ui.View):
         # We add the quoted url to the button, and add the button to the view.
         self.add_item(discord.ui.Button(label='Click Here', url=url))
 
-# class RiotAPI(object):
-#     def __init__(self, api_key, region-Conts.REGIONS[]):
-#         self.api_key = api_key
-#         self.region = region
-#     def _request(self, api_url, params=()):
-#         args = {'api_key': self.api_key}
-#         for key, value in params.items():
-#             if key not in args:
-#                 args[key] = value
-#         try:        
-#             response = requests.get(Conts.URL['base'].format(proxy=self.region, region=self.region, url=api_url), params=args)
-#         except Exception as e:
-#             print(e)
-#         return response.json()
 @bot.event
 async def on_ready():
     print("Ready to go")
