@@ -1,0 +1,1354 @@
+{
+    "Achaemenid_Empire": {
+        "hp": 2400,
+        "atk": 700
+    },
+    "Afghanistan": {
+        "hp": 160,
+        "atk": 120
+    },
+    "African_Union": {
+        "hp": 1975,
+        "atk": "0 but will eat opponents ball and destroys self"
+    },
+    "Albania": {
+        "hp": 130,
+        "atk": 25
+    },
+    "Algeria": {
+        "hp": 990,
+        "atk": 215
+    },
+    "Ancient_Athens": {
+        "hp": 800,
+        "atk": 200
+    },
+    "Ancient_Egypt": {
+        "hp": 1700,
+        "atk": 350
+    },
+    "Ancient_Greece": {
+        "hp": 2200,
+        "atk": 650
+    },
+    "Ancient_Sparta": {
+        "hp": 800,
+        "atk": 200
+    },
+    "Andorra": {
+        "hp": 431,
+        "atk": 188
+    },
+    "Angola": {
+        "hp": 350,
+        "atk": 55
+    },
+    "Antarctica": {
+        "hp": 2000,
+        "atk": 100
+    },
+    "Antigua_and_Barbuda": {
+        "hp": 93,
+        "atk": 212
+    },
+    "Arab_League": {
+        "hp": 2500,
+        "atk": 400
+    },
+    "Argentina": {
+        "hp": 700,
+        "atk": 150
+    },
+    "Argentine_Confederation": {
+        "hp": 850,
+        "atk": 	900
+    },
+    "Armenia": {
+        "hp": 165,
+        "atk": 35
+    },
+    "Australia": {
+        "hp": 165,
+        "atk": 35
+    },
+    "Austria-Hungary": {
+        "hp": 2340,
+        "atk": 	620
+    },
+    "Austria": {
+        "hp": 415,
+        "atk": 75
+    },
+    "Austrian_Empire": {
+        "hp": 2300,
+        "atk": 1000
+    },
+    "Azerbaijan": {
+        "hp": 370,
+        "atk": 80
+    },
+    "Babylon": {
+        "hp": 800,
+        "atk": 200
+    },
+    "Bahamas": {
+        "hp": 450,
+        "atk": 300
+    },
+    "Bahrain": {
+        "hp": 180,
+        "atk": 40
+    },
+    "Bangladesh": {
+        "hp": 580,
+        "atk": 140
+    },
+    "Barbados": {
+        "hp": 340,
+        "atk": 	120
+    },
+    "Bavaria": {
+        "hp": 400,
+        "atk": 	600
+    },
+    "Belarus": {
+        "hp": 450,
+        "atk": 115
+    },
+    "Belgium": {
+        "hp": 345,
+        "atk": 55
+    },
+    "Belize": {
+        "hp": 234,
+        "atk": 142
+    },
+    "Benin": {
+        "hp": 83,
+        "atk": 64
+    },
+    "Bhutan": {
+        "hp": 80,
+        "atk": 15
+    },
+    "Bolivia": {
+        "hp": 360,
+        "atk": 35
+    },
+    "Bosnia_and_Herzegovina": {
+        "hp": 130,
+        "atk": 20
+    },
+    "Botswana": {
+        "hp": 145,
+        "atk": 20
+    },
+    "Brazil": {
+        "hp": 2100,
+        "atk": 600
+    },
+    "BRICS": {
+        "hp": 1500,
+        "atk": 	583
+    },
+    "British_Empire": {
+        "hp": 3000,
+        "atk": 	1100
+    },
+    "British_Raj": {
+        "hp": 1575,
+        "atk": 275
+    },
+    "Brunei": {
+        "hp": 300,
+        "atk": 150
+    },
+    "Bulgaria": {
+        "hp": 370,
+        "atk": 55
+    },
+    "Burkina_Faso": {
+        "hp": 115,
+        "atk": 20
+    },
+    "Burundi": {
+        "hp": 130,
+        "atk": 240
+    },
+    "Byelorussian_Soviet_Socialist_Republic": {
+        "hp": 400,
+        "atk": 250
+    },
+    "Byzantium": {
+        "hp": 1700,
+        "atk": 600
+    },
+    "Cambodia": {
+        "hp": 170,
+        "atk": 30
+    },
+    "Cameroon": {
+        "hp": 150,
+        "atk": 25
+    },
+    "Canada": {
+        "hp": 2500,
+        "atk": 200
+    },
+    "Cape_Verde": {
+        "hp": 184,
+        "atk": 291
+    },
+    "Carthage": {
+        "hp": 1700,
+        "atk": 500
+    },
+    "Central_African_Republic": {
+        "hp": 100,
+        "atk": 10
+    },
+    "Ceylon": {
+        "hp": 300,
+        "atk": 20
+    },
+    "Chad": {
+        "hp": 200,
+        "atk": 20
+    },
+    "Chile": {
+        "hp": 485,
+        "atk": 80
+    },
+    "China": {
+        "hp": 2700,
+        "atk": 	850
+    },
+    "Colombia": {
+        "hp": 600,
+        "atk": 100
+    },
+    "Comoros": {
+        "hp": 74,
+        "atk": 93
+    },
+    "Confederate_States": {
+        "hp": 1500,
+        "atk": 650
+    },
+    "Congo": {
+        "hp": 145,
+        "atk": 20
+    },
+    "Congo_Free_State": {
+        "hp": 645,
+        "atk": 320
+    },
+    "Costa_Rica": {
+        "hp": 372,
+        "atk": 	139
+    },
+    "Cote_d'Ivoire": {
+        "hp": 145,
+        "atk": 25
+    },
+    "Croatia": {
+        "hp": 395,
+        "atk": 70
+    },
+    "Cuba": {
+        "hp": 330,
+        "atk": 50
+    },
+    "Cyprus": {
+        "hp": 600,
+        "atk": 200
+    },
+    "Czechia": {
+        "hp": 650,
+        "atk": 135
+    },
+    "Czechoslovakia": {
+        "hp": 1300,
+        "atk": 250
+    },
+    "Dahomey": {
+        "hp": 100,
+        "atk": 50
+    },
+    "Denmark": {
+        "hp": 430,
+        "atk": 	85
+    },
+    "Djibouti": {
+        "hp": 70,
+        "atk": 10
+    },
+    "Dominica": {
+        "hp": 423,
+        "atk": 	183
+    },
+    "Dominican_Republic": {
+        "hp": 115,
+        "atk": 15
+    },
+    "DR_Congo": {
+        "hp": 450,
+        "atk": 50
+    },
+    "Duchy_of_Limburg": {
+        "hp": 350,
+        "atk": 	200
+    },
+    "East_Germany": {
+        "hp": 900,
+        "atk": 100
+    },
+    "Ecuador": {
+        "hp": 340,
+        "atk": 50
+    },
+    "Egypt": {
+        "hp": 2000,
+        "atk": 475
+    },
+    "El_Salvador": {
+        "hp": 100,
+        "atk": 10
+    },
+    "Emirate_of_Nejd": {
+        "hp": 1400,
+        "atk": 200
+    },
+    "Empire_of_Brazil": {
+        "hp": 1400,
+        "atk": 	700
+    },
+    "England": {
+        "hp": 736,
+        "atk": 563
+    },
+    "Equatorial_Guinea": {
+        "hp": 222,
+        "atk": 194
+    },
+    "Eritrea": {
+        "hp": 120,
+        "atk": 15
+    },
+    "Estonia": {
+        "hp": 225,
+        "atk": 25
+    },
+    "Eswatini": {
+        "hp": 132,
+        "atk": 274
+    },
+    "Ethiopia": {
+        "hp": 360,
+        "atk": 65
+    },
+    "Ethiopian_Empire": {
+        "hp": 1400,
+        "atk": 200
+    },
+    "European_Union": {
+        "hp": 1500,
+        "atk": "0, but if any eu member is on field, double hp and atk"
+    },
+    "Faroe_Islands": {
+        "hp": 633,
+        "atk": 	322
+    },
+    "Fatimid_Caliphate": {
+        "hp": 750,
+        "atk": 200
+    },
+    "Federal_Republic_of_Central_America": {
+        "hp": 350,
+        "atk": 350
+    },
+    "Fiji": {
+        "hp": 400,
+        "atk": 250
+    },
+    "Finland": {
+        "hp": 394,
+        "atk": 42
+    },
+    "France": {
+        "hp": 2550,
+        "atk": 750
+    },
+    "Francoist_Spain": {
+        "hp": 1600,
+        "atk": 300
+    },
+    "Franks": {
+        "hp": 800,
+        "atk": 200
+    },
+    "Free_City_of_Danzig": {
+        "hp": 500,
+        "atk": 30
+    },
+    "Free_City_of_Frankfurt": {
+        "hp": 350,
+        "atk": 100
+    },
+    "Free_France": {
+        "hp": 1400,
+        "atk": 300
+    },
+    "French_Empire": {
+        "hp": 2100,
+        "atk": 597
+    },
+    "French_Indochina": {
+        "hp": 1600,
+        "atk": 300
+    },
+    "Gabon": {
+        "hp": 105,
+        "atk": 15
+    },
+    "Gambia": {
+        "hp": 150,
+        "atk": 40
+    },
+    "Gaul": {
+        "hp": 1000,
+        "atk": 300
+    },
+    "Georgia": {
+        "hp": 186,
+        "atk": 20
+    },
+    "Germania": {
+        "hp": 900,
+        "atk": 250
+    },
+    "Germany": {
+        "hp": 1870,
+        "atk": 500
+    },
+    "German_Empire": {
+        "hp": 2850,
+        "atk": 800
+    },
+    "Ghana": {
+        "hp": 170,
+        "atk": 30
+    },
+    "Golden_Horde": {
+        "hp": 400,
+        "atk": 	150
+    },
+    "Grand_Duchy_of_Tuscany": {
+        "hp": 300,
+        "atk":  95
+    },
+    "Greece": {
+        "hp": 1450,
+        "atk": 280
+    },
+    "Greenland": {
+        "hp": 1500,
+        "atk": 	600
+    },
+    "Grenada": {
+        "hp": 132,
+        "atk": 231
+    },
+    "Guatemala": {
+        "hp": 165,
+        "atk": 20
+    },
+    "Guinea-Bissau": {
+        "hp": 43,
+        "atk": 43
+    },
+    "Guinea": {
+        "hp": 300,
+        "atk": 100
+    },
+    "Guyana": {
+        "hp": 300,
+        "atk":  240
+    },
+    "Haiti": {
+        "hp": 115,
+        "atk": 15
+    },
+    "Hejaz": {
+        "hp": 55,
+        "atk": 15
+    },
+    "Holy_Roman_Empire": {
+        "hp": 2500,
+        "atk": 1500
+    },
+    "Honduras": {
+        "hp": 115,
+        "atk": 15
+    },
+    "Hong_Kong": {
+        "hp": 500,
+        "atk": 320
+    },
+    "Hungary": {
+        "hp": 435,
+        "atk": 100
+    },
+    "Hunnic_Empire": {
+        "hp": 2500,
+        "atk": 900
+    },
+    "Iberian_Union": {
+        "hp": 500,
+        "atk": 270
+    },
+    "Iceland": {
+        "hp": 100,
+        "atk": 10
+    },
+    "India": {
+        "hp": 2600,
+        "atk": 800
+    },
+    "Indonesia": {
+        "hp": 1975,
+        "atk": 450
+    },
+    "Iran": {
+        "hp": 2222,
+        "atk": 450
+    },
+    "Iraq": {
+        "hp": 900,
+        "atk":  225
+    },
+    "Ireland": {
+        "hp": 160,
+        "atk": 20
+    },
+    "Israel": {
+        "hp": 1850,
+        "atk": 625
+    },
+    "Italy": {
+        "hp": 2300,
+        "atk": 500
+    },
+    "Jamaica": {
+        "hp": 400,
+        "atk": 200
+    },
+    "Japan": {
+        "hp": 2500,
+        "atk": 650
+    },
+    "Japanese_Empire": {
+        "hp": 2700,
+        "atk": 800
+    },
+    "Jordan": {
+        "hp": 290,
+        "atk": 60
+    },
+    "Joseon": {
+        "hp": 1900,
+        "atk": 	600
+    },
+    "Kalmar_Union": {
+        "hp": 1000,
+        "atk": 	1700
+    },
+    "Kazakhstan": {
+        "hp": 360,
+        "atk": 60
+    },
+    "Kenya": {
+        "hp": 435,
+        "atk": 40
+    },
+    "Khedivate_of_Egypt": {
+        "hp":  300,
+        "atk": 75
+    },
+    "Khiva": {
+        "hp": 400,
+        "atk": 320
+    },
+    "Khmer_Empire": {
+        "hp": 450,
+        "atk": 95
+    },
+    "Kingdom_of_Bali": {
+        "hp": 800,
+        "atk": 50
+    },
+    "Kingdom_of_Bora_Bora": {
+        "hp": 100,
+        "atk": 100
+    },
+    "Kingdom_of_Brandenburg": {
+        "hp": 700,
+        "atk": 450
+    },
+    "Kingdom_of_Egypt": {
+        "hp": 1800,
+        "atk": 275
+    },
+    "Kingdom_of_Greece": {
+        "hp": 1450,
+        "atk": 280
+    },
+    "Kingdom_of_Hawaii": {
+        "hp": 400,
+        "atk": 350
+    },
+    "Kingdom_of_Hungary": {
+        "hp": 1400,
+        "atk": 600
+    },
+    "Kingdom_of_Italy": {
+        "hp": 2100,
+        "atk": 450
+    },
+    "Kingdom_of_Sardinia": {
+        "hp":  195,
+        "atk": 69
+    },
+    "Kingdom_of_Saxony": {
+        "hp": 400,
+        "atk": 250
+    },
+    "Kingdom_of_Two_Sicilies": {
+        "hp": 850,
+        "atk":	750
+    },
+    "Kiribati": {
+        "hp": 400,
+        "atk": 190
+    },
+    "Konbaung_Empire": {
+        "hp": 1000,
+        "atk": 650
+    },
+    "Korea": {
+        "hp": 2000,
+        "atk": 	600
+    },
+    "Kosovo": {
+        "hp": 75,
+        "atk": 10
+    },
+    "Kuwait": {
+        "hp": 250,
+        "atk": 30
+    },
+    "Kyrgyzstan": {
+        "hp": 175,
+        "atk": 25
+    },
+    "Laos": {
+        "hp": 115,
+        "atk": 15
+    },
+    "Latvia": {
+        "hp": 245,
+        "atk": 25
+    },
+    "League_of_Nations": {
+        "hp": 950,
+        "atk": "0 can choose an opponent ball that cant do anything to your deck"
+    },
+    "Lebanon": {
+        "hp": 120,
+        "atk": 15
+    },
+    "Lesotho": {
+        "hp": 85,
+        "atk": 73
+    },
+    "Liberia": {
+        "hp": 90,
+        "atk": 15
+    },
+    "Libya": {
+        "hp": 310,
+        "atk": 40
+    },
+    "Liechtenstein": {
+        "hp": 240,
+        "atk": 80
+    },
+    "Lithuania": {
+        "hp": 225,
+        "atk": 25
+    },
+    "Luxembourg": {
+        "hp": 80,
+        "atk": 15
+    },
+    "Macau": {
+        "hp": 424,
+        "atk": 564
+    },
+    "Macedon": {
+        "hp": 2400,
+        "atk": 600
+    },
+    "Madagascar": {
+        "hp": 120,
+        "atk": 10
+    },
+    "Majapahit": {
+        "hp": 150,
+        "atk": 40
+    },
+    "Malawi": {
+        "hp": 142,
+        "atk": 212
+    },
+    "Malaysia": {
+        "hp": 545,
+        "atk": 100
+    },
+    "Maldives": {
+        "hp": 200,
+        "atk": 49
+    },
+    "Mali": {
+        "hp": 210,
+        "atk": 40
+    },
+    "Mali_Empire": {
+        "hp": 500,
+        "atk": 170
+    },
+    "Malta": {
+        "hp": 800,
+        "atk": 60
+    },
+    "Manchukuo": {
+        "hp": 1500,
+        "atk": 300
+    },
+    "Marshall_Islands": {
+        "hp": 480,
+        "atk":  82
+    },
+    "Mauritania": {
+        "hp": 135,
+        "atk": 10
+    },
+    "Mauritius": {
+        "hp": 28,
+        "atk": 63
+    },
+    "Mayan_Empire": {
+        "hp": 1500,
+        "atk": 400
+    },
+    "Mexico": {
+        "hp": 610,
+        "atk": 110
+    },
+    "Micronesia": {
+        "hp": 452,
+        "atk": 290
+    },
+    "Ming_Dynasty": {
+        "hp": 1675,
+        "atk": 400
+    },
+    "Moldova": {
+        "hp": 135,
+        "atk": 15
+    },
+    "Monaco": {
+        "hp": 500,
+        "atk": 300
+    },
+    "Mongolia": {
+        "hp": 180,
+        "atk": 25
+    },
+    "Mongol_Empire": {
+        "hp": 2200,
+        "atk": 	1800
+    },
+    "Montenegro": {
+        "hp": 95,
+        "atk": 10
+    },
+    "Morocco": {
+        "hp": 450,
+        "atk":  65
+    },
+    "Mossi_Kingdoms": {
+        "hp": 250,
+        "atk": 150
+    },
+    "Mozambique": {
+        "hp": 160,
+        "atk": 30
+    },
+    "Mughal_Empire": {
+        "hp": 350,
+        "atk": 230
+    },
+    "Myanmar": {
+        "hp": 725,
+        "atk": 175
+    },
+    "Namibia": {
+        "hp": 128,
+        "atk": 15
+    },
+    "Nanda_Empire": {
+        "hp": 120,
+        "atk": 41
+    },
+    "Napoleonic_France": {
+        "hp": 2000,
+        "atk": 600
+    },
+    "NATO": {
+        "hp": 650,
+        "atk": 1200
+    },
+    "Nauru": {
+        "hp": 74,
+        "atk": 92
+    },
+    "Nepal": {
+        "hp": 125,
+        "atk": 15
+    },
+    "Netherlands": {
+        "hp": 825,
+        "atk": 200
+    },
+    "New_Zealand": {
+        "hp": 400,
+        "atk": 40
+    },
+    "Nicaragua": {
+        "hp": 110,
+        "atk": 15
+    },
+    "Niger": {
+        "hp": 150,
+        "atk": 25
+    },
+    "Nigeria": {
+        "hp": 850,
+        "atk": 215
+    },
+    "Northern_Ireland": {
+        "hp": 634,
+        "atk": 180
+    },
+    "North_German_Confederation": {
+        "hp": 1500,
+        "atk": 400
+    },
+    "North_Korea": {
+        "hp": 550,
+        "atk": "550, will kill the ball that kills him lolol"
+    },
+    "North_Macedonia": {
+        "hp": 109,
+        "atk": 41
+    },
+    "North_Vietnam": {
+        "hp":  1100,
+        "atk": 300
+    },
+    "Norway": {
+        "hp": 950,
+        "atk": 250
+    },
+    "Numidia": {
+        "hp": 900,
+        "atk": 218
+    },
+    "Oman": {
+        "hp": 350,
+        "atk": 45
+    },
+    "Orange_Free_State": {
+        "hp": 300,
+        "atk": 100
+    },
+    "Ottoman_Empire": {
+        "hp": 2400,
+        "atk": 325
+    },
+    "Pakistan": {
+        "hp": 2300,
+        "atk": 600
+    },
+    "Palau": {
+        "hp": 94,
+        "atk": 75
+    },
+    "Palestine": {
+        "hp": 125,
+        "atk": 50
+    },
+    "Panama": {
+        "hp": 110,
+        "atk": 10
+    },
+    "Papal_States": {
+        "hp": 2,
+        "atk": "if you own holy roman empire hp and attack get set to 1500"
+    },
+    "Papua_New_Guinea": {
+        "hp": 125,
+        "atk": 15
+    },
+    "Paraguay": {
+        "hp": 160,
+        "atk": 25
+    },
+    "Paris_Commune": {
+        "hp": 50,
+        "atk": 10
+    },
+    "Parthian_Empire": {
+        "hp": 800,
+        "atk": 235
+    },
+    "Peru-Bolivian_Confederation": {
+        "hp": 200,
+        "atk": 100
+    },
+    "Peru": {
+        "hp": 500,
+        "atk": 90
+    },
+    "Philippines": {
+        "hp": 100,
+        "atk": 85
+    },
+    "Poland": {
+        "hp": 1250,
+        "atk": 300
+    },
+    "Polish-Lithuanian_Commonwealth": {
+        "hp": 2400,
+        "atk": 1850
+    },
+    "Portugal": {
+        "hp": 530,
+        "atk": 135
+    },
+    "Portuguese_Empire": {
+        "hp":  2700,
+        "atk": 700
+    },
+    "Principality_of_Moldavia": {
+        "hp": 115,
+        "atk": 65
+    },
+    "Prussia": {
+        "hp": 800,
+        "atk": 250
+    },
+    "Qajar_Dynasty": {
+        "hp": 90,
+        "atk": 50
+    },
+    "Qatar": {
+        "hp": 275,
+        "atk": 35
+    },
+    "Qing": {
+        "hp": 1675,
+        "atk": 250
+    },
+    "Qin_Dynasty": {
+        "hp": 2700,
+        "atk": 	600
+    },
+    "Quebec": {
+        "hp": 500,
+        "atk": 300
+    },
+    "Rashidi_Emirate": {
+        "hp": 1250,
+        "atk": 500
+    },
+    "Reichtangle": {
+        "hp": 3250,
+        "atk": "0, but damage is rolled from 100 to 1000"
+    },
+    "Republican_Spain": {
+        "hp": 2000,
+        "atk": 300
+    },
+    "Republic_of_China": {
+        "hp": 2600,
+        "atk": 700
+    },
+    "Republic_of_New_Granada": {
+        "hp": 339,
+        "atk": 384
+    },
+    "Republic_of_Texas": {
+        "hp": 1000,
+        "atk": 1000
+    },
+    "Republic_of_Venice": {
+        "hp": 2500,
+        "atk": 400
+    },
+    "Romania": {
+        "hp": 750,
+        "atk": 185
+    },
+    "Roman_Empire": {
+        "hp": 3000,
+        "atk": 900
+    },
+    "Russia": {
+        "hp": 2800,
+        "atk": 1250
+    },
+    "Russian_Empire": {
+        "hp": 2800,
+        "atk": 	575
+    },
+    "Russian_Soviet_Federative_Socialist_Republic": {
+        "hp": 1240,
+        "atk": 980
+    },
+    "Rwanda": {
+        "hp": 92,
+        "atk": 27
+    },
+    "Safavid_Empire": {
+        "hp": 720,
+        "atk": 420
+    },
+    "Saint_Kitts_and_Nevis": {
+        "hp": 342,
+        "atk": 232
+    },
+    "Saint_Lucia": {
+        "hp": 111,
+        "atk": 84
+    },
+    "Samoa": {
+        "hp": 284,
+        "atk": 187
+    },
+    "San_Marino": {
+        "hp": 730,
+        "atk": 80
+    },
+    "Sao_Tome_and_Principe": {
+        "hp": 123,
+        "atk": 133
+    },
+    "Saudi_Arabia": {
+        "hp": 1800,
+        "atk": 425
+    },
+    "Scotland": {
+        "hp": 1000,
+        "atk": 400
+    },
+    "Senegal": {
+        "hp": 80,
+        "atk": 15
+    },
+    "Serbia": {
+        "hp": 400,
+        "atk": 85
+    },
+    "Seychelles": {
+        "hp": 100,
+        "atk": 20
+    },
+    "Siam": {
+        "hp": 550,
+        "atk": 115
+    },
+    "Sierra_Leone": {
+        "hp": 80,
+        "atk": 10
+    },
+    "Singapore": {
+        "hp": 620,
+        "atk": 120
+    },
+    "Slovakia": {
+        "hp": 376,
+        "atk": 66
+    },
+    "Slovenia": {
+        "hp": 215,
+        "atk": 19
+    },
+    "Solomon_Islands": {
+        "hp": 213,
+        "atk": 123
+    },
+    "Somalia": {
+        "hp": 140,
+        "atk": 40
+    },
+    "Somaliland": {
+        "hp": 400,
+        "atk": 30
+    },
+    "South_Africa": {
+        "hp": 1550,
+        "atk": 325
+    },
+    "South_Korea": {
+        "hp": 1550,
+        "atk": 930
+    },
+    "South_Sudan": {
+        "hp": 200,
+        "atk": 30
+    },
+    "South_Vietnam": {
+        "hp": 1400,
+        "atk": 300
+    },
+    "South_Yemen": {
+        "hp": 400,
+        "atk": 10
+    },
+    "Soviet_Union": {
+        "hp": 2500,
+        "atk": 900
+    },
+    "Spain": {
+        "hp": 1825,
+        "atk": 500
+    },
+    "Spanish_Empire": {
+        "hp": 2000,
+        "atk": 500
+    },
+    "Sri_Lanka": {
+        "hp": 260,
+        "atk": 35
+    },
+    "St_Vincent_and_the_Grenadines": {
+        "hp": 74,
+        "atk": 99
+    },
+    "Sudan": {
+        "hp": 320,
+        "atk": 40
+    },
+    "Suriname": {
+        "hp": 86,
+        "atk": 9
+    },
+    "Sweden": {
+        "hp": 1600,
+        "atk": 350
+    },
+    "Swedish_Empire": {
+        "hp": 1400,
+        "atk": 600
+    },
+    "Switzerland": {
+        "hp": 1000,
+        "atk": 230
+    },
+    "Syria": {
+        "hp": 560,
+        "atk": 180
+    },
+    "Taiwan": {
+        "hp": 1450,
+        "atk": 650
+    },
+    "Tajikistan": {
+        "hp": 155,
+        "atk": 20
+    },
+    "Tannu_Tuva": {
+        "hp": 300,
+        "atk": 50
+    },
+    "Tanzania": {
+        "hp": 88,
+        "atk": 21
+    },
+    "Thailand": {
+        "hp": 1100,
+        "atk": 225
+    },
+    "Third_French_Republic": {
+        "hp": 1150,
+        "atk": 	600
+    },
+    "Tibet": {
+        "hp": 900,
+        "atk": 200
+    },
+    "Timor-Leste": {
+        "hp": 77,
+        "atk": 128
+    },
+    "Togo": {
+        "hp": 187,
+        "atk": 174
+    },
+    "Tokugawa_Shogunate": {
+        "hp": 2500,
+        "atk": 1700
+    },
+    "Tonga": {
+        "hp": 154,
+        "atk": 235
+    },
+    "Trinidad_and_Tobago": {
+        "hp": 344,
+        "atk": 555
+    },
+    "Tunisia": {
+        "hp": 300,
+        "atk": 30
+    },
+    "Turkey": {
+        "hp":  2150,
+        "atk": 500
+    },
+    "Turkmenistan": {
+        "hp": 345,
+        "atk": 30
+    },
+    "Tuvalu": {
+        "hp": 200,
+        "atk": 240
+    },
+    "UAE": {
+        "hp": 775,
+        "atk": 175
+    },
+    "Uganda": {
+        "hp": 155,
+        "atk": 20
+    },
+    "Ukraine": {
+        "hp": 1775,
+        "atk": 350
+    },
+    "Ukrainian_Soviet_Socialist_Republic": {
+        "hp": 634,
+        "atk": 460
+    },
+    "Union_of_South_Africa": {
+        "hp": 1100,
+        "atk": 200
+    },
+    "United_Arab_Republic": {
+        "hp": 2100,
+        "atk": 500
+    },
+    "United_Kingdom": {
+        "hp": 2500,
+        "atk": 700
+    },
+    "United_Kingdoms_of_Sweden_and_Norway": {
+        "hp": 800,
+        "atk": 	1500
+    },
+    "United_Nations": {
+        "hp": 2500,
+        "atk": "0, united nations will protect all balls until it dies"
+    },
+    "United_States": {
+        "hp": 3000,
+        "atk": 1100
+    },
+    "Uruguay": {
+        "hp": 165,
+        "atk": 35
+    },
+    "Uzbekistan": {
+        "hp": 475,
+        "atk": 75
+    },
+    "Vanuatu": {
+        "hp": 43,
+        "atk": 184
+    },
+    "Vatican": {
+        "hp": 1,
+        "atk": "1, will crucify a ball on opponents team that has less than 2000 hp"
+    },
+    "Venezuela": {
+        "hp": 460,
+        "atk": 90
+    },
+    "Vichy_France": {
+        "hp": 900,
+        "atk": 200
+    },
+    "Vietnam": {
+        "hp": 1200,
+        "atk": 250
+    },
+    "Wales": {
+        "hp": 483,
+        "atk": 511
+    },
+    "Warsaw_Pact": {
+        "hp": 650,
+        "atk": 1200
+    },
+    "Weimar_Republic": {
+        "hp": 2000,
+        "atk": 50
+    },
+    "Western_Sahara": {
+        "hp": 200,
+        "atk": 70
+    },
+    "West_Germany": {
+        "hp": 1600,
+        "atk": 200
+    },
+    "Xiongnu": {
+        "hp": 1400,
+        "atk": 600
+    },
+    "Yemen": {
+        "hp": 235,
+        "atk": 25
+    },
+    "Yuan_Dynasty": {
+        "hp": 600,
+        "atk": 500
+    },
+    "Yugoslavia": {
+        "hp": 2000,
+        "atk": 500
+    },
+    "Zambia": {
+        "hp": 170,
+        "atk": 20
+    },
+    "Zhou": {
+        "hp": 1300,
+        "atk": 500
+    },
+    "Zimbabwe": {
+        "hp": 185,
+        "atk": 25
+    }
+}

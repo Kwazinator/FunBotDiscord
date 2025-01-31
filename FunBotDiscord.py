@@ -1,6 +1,6 @@
 import discord
 from urllib.parse import quote_plus
-
+import json
 import LeagueOfLegends
 from hell_let_loose import HLL_View
 from discord.ext import commands, tasks
@@ -180,7 +180,7 @@ async def on_message(message):
                     )
                 await clip_channel.send(embed=embed, file=await attachment.to_file())
 
-    if message.attachments and message.author.id in [368913296771776512, MY_USER_ID, 999736048596816014]:
+    if message.attachments and message.author.id in [AUTHORIZED_USER_ID]:
         for attachment in message.attachments:
             # Check if the attachment is a valid clip (based on file extension)
             if any(attachment.filename.lower().endswith(ext) for ext in
@@ -189,10 +189,12 @@ async def on_message(message):
                 if image is not None:
                     print('image at ' + attachment.url)
                     answer = LeagueOfLegends.find_best_match(image, "AllLeagueChampions")
+                    hp_and_atk = get_value_from_json(answer)
                     answer = answer.replace('_', ' ')
-                    user = await bot.fetch_user(MY_USER_ID)  # Replace with your Discord ID
+                    answer += "\nhp = %s\natk = %s" % (hp_and_atk["hp"],hp_and_atk["atk"])
+                    user = await bot.fetch_user(MY_USER_ID)
                     await user.send(answer)
-                    user = await bot.fetch_user(368913296771776512)  # Replace with your Discord ID
+                    user = await bot.fetch_user(368913296771776512)
                     await user.send(answer)
                 else:
                     await message.channel.send("Failed to process the image.")
@@ -206,7 +208,28 @@ async def download_image(url):
                 image_array = np.asarray(bytearray(image_bytes), dtype=np.uint8)
                 return cv2.imdecode(image_array, cv2.IMREAD_COLOR)  # Decode image for OpenCV
     return None
-             
+
+def get_value_from_json(name: str):
+    """
+    Retrieves the value associated with a given name (key) from a JSON file.
+
+    :param file_path: Path to the JSON file.
+    :param name: The key whose value needs to be retrieved.
+    :return: The value associated with the key, or None if key is not found.
+    """
+    try:
+        with open("league_values.json", 'r', encoding='utf-8') as file:
+            data = json.load(file)
+
+        return data.get(name, None)  # Returns None if key is not found
+    except FileNotFoundError:
+        print(f"Error: The file was not found.")
+    except json.JSONDecodeError:
+        print("Error: The file is not a valid JSON.")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+
+    return None
     # Don't forget to process commands if the bot has any
 
 bot.run(TOKEN)
