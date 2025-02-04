@@ -21,7 +21,8 @@ VALID_CLIP_EXTENSIONS = ['.mp4', '.webm', '.mov']
 CLIP_CHANNEL_ID = 1326956425762570240
 AUTHORIZED_USER_ID = 999736048596816014
 MY_USER_ID = 262347377476632577
-
+LEAGUE_USER_ID1 = 299335372859768852
+LEAGUE_USER_ID2 = 368913296771776512
 
 def setup_database():
     # Connect to SQLite database
@@ -176,9 +177,9 @@ async def on_message(message):
                     answer += "\nhp = %s\natk = %s" % (hp_and_atk["hp"],hp_and_atk["atk"])
                     user = await bot.fetch_user(MY_USER_ID)
                     await user.send(answer)
-                    user = await bot.fetch_user(368913296771776512)
+                    user = await bot.fetch_user(LEAGUE_USER_ID1)
                     await user.send(answer)
-                    user = await bot.fetch_user(299335372859768852)
+                    user = await bot.fetch_user(LEAGUE_USER_ID2)
                     await user.send(answer)
                 else:
                     await message.channel.send("Failed to process the image.")
