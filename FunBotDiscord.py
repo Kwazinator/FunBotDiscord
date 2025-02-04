@@ -178,6 +178,8 @@ async def on_message(message):
                     await user.send(answer)
                     user = await bot.fetch_user(368913296771776512)
                     await user.send(answer)
+                    user = await bot.fetch_user(299335372859768852)
+                    await user.send(answer)
                 else:
                     await message.channel.send("Failed to process the image.")
     await bot.process_commands(message)
