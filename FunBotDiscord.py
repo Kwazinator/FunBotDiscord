@@ -149,7 +149,7 @@ async def on_message(message):
         await message.channel.send('that guy sucks dont talk to him!')
 
     # Check if the message contains attachments
-    if message.attachments and message.author.id != AUTHORIZED_USER_ID and message.channelID != CLIP_CHANNEL_ID:
+    if message.attachments and message.channelID != CLIP_CHANNEL_ID:
         for attachment in message.attachments:
             # Check if the attachment is a valid clip (based on file extension)
             if any(attachment.filename.endswith(ext) for ext in VALID_CLIP_EXTENSIONS):
@@ -159,8 +159,7 @@ async def on_message(message):
                 # Forward the message content and original author info
                     embed = discord.Embed(
                     description=f"**{message.author.name}** shared a clip!\n{message.content}",
-                    color=discord.Color.blue()
-                    )
+                    color=discord.Color.blue())
                 await clip_channel.send(embed=embed, file=await attachment.to_file())
 
     if message.attachments and message.author.id in [AUTHORIZED_USER_ID]:
