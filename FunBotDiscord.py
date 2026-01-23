@@ -27,6 +27,8 @@ MY_USER_ID = 262347377476632577
 LEAGUE_USER_ID1 = 299335372859768852
 LEAGUE_USER_ID2 = 368913296771776512
 
+AUTHORIZED_USER_IDS = [999736048596816014]
+
 def setup_database():
     # Connect to SQLite database
     conn = sqlite3.connect('reminders.db')
@@ -85,6 +87,8 @@ async def survey(ctx):
 
 @bot.hybrid_command(name="hytale", description="Hytale control: inject/print/restart")
 async def hytale(ctx, action: str, *, payload: Optional[str] = None):
+    if ctx.author.id not in AUTHORIZED_USER_IDS:
+        return await ctx.reply("You are not allowed to command Hytale server", ephemeral=True)
     """
     Usage:
       /hytale inject <string...>
