@@ -26,7 +26,7 @@ AUTHORIZED_USER_ID = 999736048596816014
 MY_USER_ID = 262347377476632577
 LEAGUE_USER_ID1 = 299335372859768852
 LEAGUE_USER_ID2 = 368913296771776512
-
+ANSI_RE = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
 AUTHORIZED_USER_IDS = [262347377476632577,115560354012069897,341327371179261962,341327371179261962,154046751916032001]
 
 def setup_database():
@@ -247,6 +247,16 @@ async def download_image(url):
                 return cv2.imdecode(image_array, cv2.IMREAD_COLOR)  # Decode image for OpenCV
     return None
 
+def clean_terminal_text(s: str) -> str:
+    s = ANSI_RE.sub("", s)
+    # Remove common control chars that show up as  and  etc.
+    s = s.replace("\r", "")
+    s = s.replace("\b", "")   # backspace
+    s = s.replace("\x07", "") # bell
+    # Remove any remaining C0 control chars except \n and \t
+    s = re.sub(r"[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]", "", s)
+    return s
+
 def get_value_from_json(name: str):
     """
     Retrieves the value associated with a given name (key) from a JSON file.
@@ -289,9 +299,7 @@ def hytaleAdminStuff(message):
         capture_output=True,
         text=True,
     )
-    ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
-    clean = ansi_escape.sub('', authentication_code.stdout)
-    return clean
+    return clean_terminal_text(authentication_code.stdout).strip()
 def hytalePrint():
     result = subprocess.run(
         ["tail", "-n", "20", "/opt/screenlogs.txt"],
@@ -299,9 +307,7 @@ def hytalePrint():
         capture_output=True,
         text=True,
     )
-    ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
-    clean = ansi_escape.sub('', result.stdout)
-    return clean
+    return clean_terminal_text(result.stdout).strip()
 
 
 def hytaleRunCommands(commands):
@@ -314,5 +320,8 @@ def hytaleRunCommands(commands):
     ], check=True)
     time.sleep(5)
     return hytalePrint()
+
+
+
 
 bot.run(TOKEN)
