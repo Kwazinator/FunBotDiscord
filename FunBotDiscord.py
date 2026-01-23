@@ -289,7 +289,7 @@ def hytaleAdminStuff(message):
         capture_output=True,
         text=True,
     )
-    return authentication_code
+    return authentication_code.stdout
 def hytalePrint():
     result = subprocess.run(
         ["tail", "-n", "20", "/opt/screenlogs.txt"],
@@ -297,7 +297,7 @@ def hytalePrint():
         capture_output=True,
         text=True,
     )
-    return str(result)
+    return result.stdout
 
 
 def hytaleRunCommands(commands):
