@@ -14,6 +14,7 @@ import os
 import aiohttp
 import subprocess
 import time
+from typing import Optional
 
 intents = discord.Intents.all()
 f = open("botToken.txt", "r")
@@ -81,6 +82,60 @@ async def survey(ctx):
     await ctx.send(view=view)
     await view.wait()
     await ctx.send(view.answer1)
+
+@bot.hybrid_command(name="hytale", description="Hytale control: inject/print/restart")
+async def hytale(ctx, action: str, *, payload: Optional[str] = None):
+    """
+    Usage:
+      /hytale inject <string...>
+      /hytale print
+      /hytale restart
+    Also works as:
+      !hytale inject <string...>
+    """
+    action = action.lower()
+
+    # Optional: restrict who can run it
+    # if ctx.author.id not in {1234567890}:
+    #     return await ctx.reply("Not authorized.", ephemeral=True)
+
+    if action == "inject":
+        if not payload or not payload.strip():
+            return await ctx.reply("Usage: `/hytale inject <command>`", ephemeral=True)
+
+        cmd = payload.strip()
+        try:
+            result = hytaleRunCommands(cmd)
+        except subprocess.CalledProcessError as e:
+            return await ctx.reply(f"Failed to inject: `{e}`", ephemeral=True)
+
+        await ctx.reply(f"Injected into screen: `{cmd}`", ephemeral=True)
+        time.sleep(3)
+        return await ctx.reply(f"the following is result: `{result}`", ephemeral=True)
+
+    elif action == "print":
+        try:
+            out = hytalePrint()
+        except subprocess.CalledProcessError as e:
+            return await ctx.reply(f"Failed to read log: `{e}`", ephemeral=True)
+
+        out = out.strip() or "(log is empty)"
+        # Discord message limit safety
+        if len(out) > 1800:
+            out = out[-1800:]
+        return await ctx.reply(f"Last 100 log lines:\n```{out}```", ephemeral=True)
+
+    elif action == "restart":
+        # Example: inject a restart script command into the screen session
+        try:
+            hytaleAdminStuff()
+        except subprocess.CalledProcessError as e:
+            return await ctx.reply(f"Failed to restart: `{e}`", ephemeral=True)
+
+        return await ctx.reply("Restart triggered.", ephemeral=True)
+
+    else:
+        return await ctx.reply("Invalid action. Use: `inject`, `print`, or `restart`.", ephemeral=True)
 
 @bot.command(name="reminder")
 async def reminder(ctx, *, time_and_message: str):
@@ -152,7 +207,7 @@ async def on_message(message):
 
     if message.content.lower().startswith("!hytale"):
         if "print" in message.content.lower():
-            return HytalePrint()
+            return hytalePrint()
         elif "authenticate" in message.content.lower():
             return hytaleAdminStuff(message.content.lower())
         elif "inject" in message.content.lower() and message.author.id in AUTHORIZED_USER_ID:
@@ -167,7 +222,7 @@ async def on_message(message):
                 embed = discord.Embed(
                 description=f"**{message.author.name}** shared a clip!\n{message.content}",
                 color=discord.Color.blue())
-        await clip_channel.send(embed=embed, file=await attachment.to_file())
+        #await clip_channel.send(embed=embed, file=await attachment.to_file())
 
     if message.attachments and message.author.id in [AUTHORIZED_USER_ID]:
         for attachment in message.attachments:
@@ -243,7 +298,7 @@ def hytaleAdminStuff(message):
         text=True,
     )
     return authentication_code
-def HytalePrint():
+def hytalePrint():
     result = subprocess.run(
         ["tail", "-n", "100", "/opt/screenlogs.txt"],
         check=True,
@@ -262,6 +317,6 @@ def hytaleRunCommands(commands):
         "-X", "stuff", full_cmd
     ], check=True)
     time.sleep(5)
-    return HytalePrint()
+    return hytalePrint()
 
 bot.run(TOKEN)
