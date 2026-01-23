@@ -60,13 +60,11 @@ async def on_ready():
     try:
         synced = await bot.tree.sync()
         print(f"Synced {len(synced)} command(s)")
+        print(f'Logged in as {bot.user}')
+
     except Exception as e:
         print(e)
-    check_due_reminders.start()  # Start the reminders background task
-
-@bot.event
-async def on_ready():
-    print(f'Logged in as {bot.user}')
+    #check_due_reminders.start()  # Start the reminders background task
 
 @bot.hybrid_command(name="ping")
 async def hello(ctx: commands.Context):
