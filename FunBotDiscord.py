@@ -28,6 +28,12 @@ LEAGUE_USER_ID1 = 299335372859768852
 LEAGUE_USER_ID2 = 368913296771776512
 ANSI_RE = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
 AUTHORIZED_USER_IDS = [262347377476632577,115560354012069897,341327371179261962,341327371179261962,154046751916032001]
+MAX_LEN = 2000
+
+def tail_text(s: str, max_len: int = MAX_LEN) -> str:
+    if len(s) <= max_len:
+        return s
+    return s[-max_len:]
 
 def setup_database():
     # Connect to SQLite database
@@ -100,6 +106,7 @@ async def hytale(ctx, action: str, *, payload: Optional[str] = None):
         cmd = payload.strip()
         try:
             result = hytaleRunCommands(cmd)
+            result = tail_text(result, 2000)
         except subprocess.CalledProcessError as e:
             return await ctx.reply(f"Failed to inject: `{e}`", ephemeral=True)
 
@@ -109,6 +116,7 @@ async def hytale(ctx, action: str, *, payload: Optional[str] = None):
     elif action == "print":
         try:
             out = hytalePrint()
+            out = tail_text(out, 2000)
         except subprocess.CalledProcessError as e:
             return await ctx.reply(f"Failed to read log: `{e}`", ephemeral=True)
         # Discord message limit safety
@@ -293,7 +301,7 @@ def hytaleAdminStuff(message):
     time.sleep(2)
     log_path = "/opt/screenlogs.txt"
     authentication_code = subprocess.run(
-        ["tail", "-n", "20", log_path],
+        ["tail", "-n", "10", log_path],
         check=True,
         capture_output=True,
         text=True,
@@ -301,7 +309,7 @@ def hytaleAdminStuff(message):
     return clean_terminal_text(authentication_code.stdout).strip()
 def hytalePrint():
     result = subprocess.run(
-        ["tail", "-n", "20", "/opt/screenlogs.txt"],
+        ["tail", "-n", "10", "/opt/screenlogs.txt"],
         check=True,
         capture_output=True,
         text=True,
