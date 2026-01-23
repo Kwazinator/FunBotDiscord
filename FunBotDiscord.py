@@ -112,8 +112,6 @@ async def hytale(ctx, action: str, *, payload: Optional[str] = None):
             out = hytalePrint()
         except subprocess.CalledProcessError as e:
             return await ctx.reply(f"Failed to read log: `{e}`", ephemeral=True)
-
-        out = out.strip() or "(log is empty)"
         # Discord message limit safety
         if len(out) > 1800:
             out = out[-1800:]
@@ -299,7 +297,7 @@ def hytalePrint():
         capture_output=True,
         text=True,
     )
-    return result
+    return str(result)
 
 
 def hytaleRunCommands(commands):
