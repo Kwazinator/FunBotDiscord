@@ -289,7 +289,9 @@ def hytaleAdminStuff(message):
         capture_output=True,
         text=True,
     )
-    return authentication_code.stdout
+    ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
+    clean = ansi_escape.sub('', authentication_code.stdout)
+    return clean
 def hytalePrint():
     result = subprocess.run(
         ["tail", "-n", "20", "/opt/screenlogs.txt"],
@@ -297,7 +299,9 @@ def hytalePrint():
         capture_output=True,
         text=True,
     )
-    return result.stdout
+    ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
+    clean = ansi_escape.sub('', result.stdout)
+    return clean
 
 
 def hytaleRunCommands(commands):
