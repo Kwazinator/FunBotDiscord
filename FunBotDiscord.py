@@ -87,14 +87,6 @@ async def survey(ctx):
 async def hytale(ctx, action: str, *, payload: Optional[str] = None):
     if ctx.author.id not in AUTHORIZED_USER_IDS:
         return await ctx.reply("You are not allowed to command Hytale server", ephemeral=True)
-    """
-    Usage:
-      /hytale inject <string...>
-      /hytale print
-      /hytale restart
-    Also works as:
-      !hytale inject <string...>
-    """
     action = action.lower()
 
     # Optional: restrict who can run it
@@ -302,7 +294,7 @@ def hytaleAdminStuff(message):
     return authentication_code
 def hytalePrint():
     result = subprocess.run(
-        ["tail", "-n", "100", "/opt/screenlogs.txt"],
+        ["tail", "-n", "20", "/opt/screenlogs.txt"],
         check=True,
         capture_output=True,
         text=True,
