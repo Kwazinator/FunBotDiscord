@@ -104,7 +104,6 @@ async def hytale(ctx, action: str, *, payload: Optional[str] = None):
             return await ctx.reply(f"Failed to inject: `{e}`", ephemeral=True)
 
         await ctx.reply(f"Injected into screen: `{cmd}`", ephemeral=True)
-        time.sleep(3)
         return await ctx.reply(f"the following is result: `{result}`", ephemeral=True)
 
     elif action == "print":
