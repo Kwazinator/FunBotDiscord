@@ -12,6 +12,8 @@ import cv2
 import numpy as np
 import os
 import aiohttp
+import subprocess
+import time
 
 intents = discord.Intents.all()
 f = open("botToken.txt", "r")
@@ -148,6 +150,14 @@ async def on_message(message):
     if message.content.lower() == 'hey jared':
         await message.channel.send('that guy sucks dont talk to him!')
 
+    if message.content.lower().startswith("!hytale"):
+        if "print" in message.content.lower():
+            return HytalePrint()
+        elif "authenticate" in message.content.lower():
+            return hytaleAdminStuff(message.content.lower())
+        elif "inject" in message.content.lower() and message.author.id in AUTHORIZED_USER_ID:
+            return hytaleRunCommands(message.content.lower().split("inject", 1)[1].lstrip())
+
     # Check if the message contains attachments
     if message.attachments and message.channelID != CLIP_CHANNEL_ID:
         for attachment in message.attachments:
@@ -212,5 +222,46 @@ def get_value_from_json(name: str):
 
     return None
     # Don't forget to process commands if the bot has any
+
+
+
+def hytaleAdminStuff(message):
+    if "authenticate" in message:
+        full_cmd = f'{"/auth login device"}\r'
+        subprocess.run([
+            "screen",
+            "-S", str("Hytale"),
+            "-p", str(0),
+            "-X", "stuff", full_cmd
+        ], check=True)
+    time.sleep(2)
+    log_path = "/opt/screenlogs.txt"
+    authentication_code = subprocess.run(
+        ["tail", "-n", "20", log_path],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return authentication_code
+def HytalePrint():
+    result = subprocess.run(
+        ["tail", "-n", "100", "/opt/screenlogs.txt"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return result
+
+
+def hytaleRunCommands(commands):
+    full_cmd = f'{commands}\r'
+    subprocess.run([
+        "screen",
+        "-S", str("Hytale"),
+        "-p", str(0),
+        "-X", "stuff", full_cmd
+    ], check=True)
+    time.sleep(5)
+    return HytalePrint()
 
 bot.run(TOKEN)
